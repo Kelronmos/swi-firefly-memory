@@ -1,0 +1,6 @@
+{
+  "name": "SWI SEAM",
+  "description": "System Execution Awareness Monitor (SEAM) - An X-ray view of the SWI AI runtime process showing every gate, decision, evidence event, memory access, and security boundary.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
