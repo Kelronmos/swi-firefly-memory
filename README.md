@@ -1,5 +1,5 @@
 # SWI Firefly Memory
-
+Development suspended 
 Persistent Memory Engine for Structured Workflow Intelligence (SWI)
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
