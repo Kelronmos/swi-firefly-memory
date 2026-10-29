@@ -125,17 +125,24 @@ async function startServer() {
     }
 
     otpStore.delete(challenge_id);
+    // Authentication success ≠ replay permission ≠ SWI authorization.
+    // Replay requires a separate governing authorization decision.
     res.json({
       success: true,
-      authorization: {
-        replay_permission: true,
-        expires: "10 minutes",
+      authentication: {
+        verified: true,
         verified_by: "human_otp",
-        evidence_id: "EV-2026-001",
-        note: "Replay permission ≠ SWI PRODUCTION_AUTHORIZED",
+        challenge_id,
+        note: "OTP verified identity challenge only",
+      },
+      authorization: {
+        replay_permission: false,
+        reason: "otp_success_is_not_authorization",
+        note: "Authentication ≠ authorization. Governing permit required for replay.",
       },
       proven: false,
       sealed: false,
+      authorized: false,
       production_authorized: false,
     });
   });
